@@ -1,0 +1,25 @@
+package assignment;
+
+public class Increasing {
+    public static void main(String[] args) {
+    	
+    
+        System.out.println(isIncreasing(1234));  // true
+        System.out.println(isIncreasing(1111));  // false
+        System.out.println(isIncreasing(9876));  // false
+    }
+
+    public static boolean isIncreasing(int num) {
+        int prevDigit = num % 10;
+        num /= 10;
+        while (num > 0) {
+            int currDigit = num % 10;
+            if (currDigit >= prevDigit) {
+                return false;
+            }
+            prevDigit = currDigit;
+            num /= 10;
+        }
+        return true;
+    }
+}
